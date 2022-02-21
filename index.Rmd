@@ -6,7 +6,7 @@ institute: "Statistician & Podcast Host"
 date: "2022-02-24"
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: [xaringan-themer.css, chat.css]
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -25,6 +25,9 @@ library(xaringanthemer)
 style_mono_dark(base_color = "#cbf7ed")
 ```
 
+```{r xaringan-animate-css, echo=FALSE}
+xaringanExtra::use_animate_css()
+```
 
 # Rough Outline
 
@@ -81,7 +84,58 @@ class: center, bottom, inverse
 # I was so happy to have discovered remark.js!
 
 ---
+class: inverse
 
 # chat window
 
-add more here
+<ul class="nobull">
+<li>
+<div class="container">
+  <img src="img/rpodcast-hexagon.png" alt="Avatar">
+  <p style="--delay: 0.50s;">Hello. How are you today?</p>
+  <span class="time-right">11:00</span>
+</div>
+</li>
+<li>
+<div class="container darker">
+  <img src="img/rpodcast-hexagon.png" alt="Avatar" class="right">
+  <p style="--delay: 2.50s;">Hey! I'm fine. Thanks for asking!</p>
+  <span class="time-left">11:01</span>
+</div>
+</li>
+
+<li>
+<div class="container">
+  <img src="img/rpodcast-hexagon.png" alt="Avatar">
+  <p style="--delay: 4.50s;">Sweet! So, what do you wanna do today?</p>
+  <span class="time-right">11:02</span>
+</div>
+</li>
+
+<li>
+<div class="container darker">
+  <img src="img/rpodcast-hexagon.png" alt="Avatar" class="right">
+  <p style="--delay: 6.50s;">Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+  <span class="time-left">11:05</span>
+</div> 
+</li>
+</ul>
+
+---
+class: animated slideInRight fadeOutLeft
+
+# Silly
+
+Hi there
+
+--
+
+- One
+
+--
+
+- Two
+
+--
+
+- Three
