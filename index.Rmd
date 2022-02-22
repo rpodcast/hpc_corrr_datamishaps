@@ -8,26 +8,86 @@ output:
   xaringan::moon_reader:
     css: [xaringan-themer.css, chat.css]
     lib_dir: libs
+    seal: false
     nature:
+      titleSlideClass: ["bottom", "left"]
       highlightStyle: github
       highlightLines: true
+      ratio: "16:9"
       countIncrementalSlides: false
 ---
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
-
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width = 10, fig.height = 6, fig.retina = 2, warning = FALSE, message = FALSE
+)
+library(magrittr)
 ```
 
-```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
-style_mono_dark(base_color = "#cbf7ed")
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "A story of how I took down an entire HPC cluster and lived to tell about it.",
+    generator = "xaringan and remark.js"
+  ) %>%
+  meta_name("github-repo" = "rpodcast/hpc_corr_datamishaps") %>%
+  meta_social(
+    title = "Power-Hungry Correlations at their (HPC) Cores",
+    url = "https://rpodcast.github.io/hpc_corr_datamishaps",
+    image = "https://rpodcast.github.io/hpc_corr_datamishaps/img/hpc_corr_cover.png",
+    image_alt = "The first slide of the Power-Hungry Correlations at their (HPC) Cores presentation in the Data Mishaps 2022 Conference held on February 24, 2022",
+    og_type = "website",
+    og_author = "Eric Nantz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@theRcast"
+  )
 ```
 
-```{r xaringan-animate-css, echo=FALSE}
-xaringanExtra::use_animate_css()
+
+class: left, middle, hide-count
+
+background-image: url(img/mcp_explode.png) 
+background-size: cover
+
+
+.talk-meta[
+.talk-title[
+# Power-Hungry Correlations at their (HPC) Cores
+]
+]
+
+.talk-author[
+Eric Nantz
+]
+
+.talk-date[
+February 24th, 2022
+]
+
+```{css echo=FALSE}
+.talk-meta {
+  position: absolute;
+  text-align: left;
+  bottom: 400px;
+  left: 25px;
+}
+
+.talk-author {
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+.talk-date {
+  font-size: 1.25em;
+  line-height: 0;
+}
 ```
+
+
+---
 
 # Rough Outline
 
@@ -139,3 +199,18 @@ Hi there
 --
 
 - Three
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_dark(
+  base_color = "#cbf7ed",
+  header_font_google = google_font("Orbitron", "700"),
+  text_font_google = google_font("Azeret Mono", "400"),
+  extra_css = list(
+    ".hide-count .remark-slide-number" = list(
+        display = "none"
+    )
+  )
+)
+```

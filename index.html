@@ -5,30 +5,79 @@
     <meta charset="utf-8" />
     <meta name="author" content="Eric Nantz" />
     <meta name="date" content="2022-02-24" />
-    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <meta name="description" content="A story of how I took down an entire HPC cluster and lived to tell about it."/>
+    <meta name="generator" content="xaringan and remark.js"/>
+    <meta name="github-repo" content="rpodcast/hpc_corr_datamishaps"/>
+    <meta name="twitter:title" content="Power-Hungry Correlations at their (HPC) Cores"/>
+    <meta name="twitter:description" content="A story of how I took down an entire HPC cluster and lived to tell about it."/>
+    <meta name="twitter:url" content="https://rpodcast.github.io/hpc_corr_datamishaps"/>
+    <meta name="twitter:image" content="https://rpodcast.github.io/hpc_corr_datamishaps/img/hpc_corr_cover.png"/>
+    <meta name="twitter:image:alt" content="The first slide of the Power-Hungry Correlations at their (HPC) Cores presentation in the Data Mishaps 2022 Conference held on February 24, 2022"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@theRcast"/>
+    <meta name="twitter:site" content="@theRcast"/>
+    <meta property="og:title" content="Power-Hungry Correlations at their (HPC) Cores"/>
+    <meta property="og:description" content="A story of how I took down an entire HPC cluster and lived to tell about it."/>
+    <meta property="og:url" content="https://rpodcast.github.io/hpc_corr_datamishaps"/>
+    <meta property="og:image" content="https://rpodcast.github.io/hpc_corr_datamishaps/img/hpc_corr_cover.png"/>
+    <meta property="og:image:alt" content="The first slide of the Power-Hungry Correlations at their (HPC) Cores presentation in the Data Mishaps 2022 Conference held on February 24, 2022"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="article:author" content="Eric Nantz"/>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="chat.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
 
+
+
+
+
+
+
+class: left, middle, hide-count
+
+background-image: url(img/mcp_explode.png) 
+background-size: cover
+
+
+.talk-meta[
+.talk-title[
 # Power-Hungry Correlations at their (HPC) Cores
-## Data Mishaps 2022
-### Eric Nantz
-### Statistician &amp; Podcast Host
-### 2022-02-24
+]
+]
+
+.talk-author[
+Eric Nantz
+]
+
+.talk-date[
+February 24th, 2022
+]
+
+&lt;style type="text/css"&gt;
+.talk-meta {
+  position: absolute;
+  text-align: left;
+  bottom: 400px;
+  left: 25px;
+}
+
+.talk-author {
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+.talk-date {
+  font-size: 1.25em;
+  line-height: 0;
+}
+&lt;/style&gt;
+
 
 ---
-
-
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
-
-
-
-
-
-
 
 # Rough Outline
 
@@ -146,6 +195,7 @@ Hi there
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "highlightLines": true,
+"ratio": "16:9",
 "countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
