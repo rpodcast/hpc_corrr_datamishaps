@@ -146,8 +146,6 @@ class: center, bottom, inverse
 ---
 class: inverse
 
-# chat window
-
 <ul class="nobull">
 <li>
 <div class="container">

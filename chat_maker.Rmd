@@ -1,0 +1,82 @@
+---
+title: "Power-Hungry Correlations at their (HPC) Cores"
+subtitle: "Data Mishaps 2022"
+author: "Eric Nantz"
+institute: "Statistician & Podcast Host"
+date: "2022-02-24"
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, chat.css]
+    lib_dir: libs
+    seal: false
+    nature:
+      titleSlideClass: ["bottom", "left"]
+      highlightStyle: github
+      highlightLines: true
+      ratio: "16:9"
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width = 10, fig.height = 6, fig.retina = 2, warning = FALSE, message = FALSE
+)
+library(magrittr)
+```
+
+class: inverse
+
+<ul class="nobull">
+<li>
+<div class="container">
+  <img src="img/rpodcast-hexagon.png" alt="Avatar">
+  <p>Hello. How are you today?</p>
+  <span class="time-right">11:00</span>
+</div>
+</li>
+
+--
+
+<li>
+<div class="container darker">
+  <img src="img/rpodcast-hexagon.png" alt="Avatar" class="right">
+  <p>Hey! I'm fine. Thanks for asking!</p>
+  <span class="time-left">11:01</span>
+</div>
+</li>
+
+--
+
+<li>
+<div class="container">
+  <img src="img/rpodcast-hexagon.png" alt="Avatar">
+  <p>Sweet! So, what do you wanna do today?</p>
+  <span class="time-right">11:02</span>
+</div>
+</li>
+
+--
+
+<li>
+<div class="container darker">
+  <img src="img/rpodcast-hexagon.png" alt="Avatar" class="right">
+  <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+  <span class="time-left">11:05</span>
+</div> 
+</li>
+</ul>
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_dark(
+  base_color = "#cbf7ed",
+  header_font_google = google_font("Orbitron", "700"),
+  text_font_google = google_font("Azeret Mono", "400"),
+  extra_css = list(
+    ".hide-count .remark-slide-number" = list(
+        display = "none"
+    )
+  )
+)
+```

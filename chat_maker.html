@@ -5,25 +5,6 @@
     <meta charset="utf-8" />
     <meta name="author" content="Eric Nantz" />
     <meta name="date" content="2022-02-24" />
-    <meta name="description" content="A story of how I took down an entire HPC cluster and lived to tell about it."/>
-    <meta name="generator" content="xaringan and remark.js"/>
-    <meta name="github-repo" content="rpodcast/hpc_corr_datamishaps"/>
-    <meta name="twitter:title" content="Power-Hungry Correlations at their (HPC) Cores"/>
-    <meta name="twitter:description" content="A story of how I took down an entire HPC cluster and lived to tell about it."/>
-    <meta name="twitter:url" content="https://rpodcast.github.io/hpc_corr_datamishaps"/>
-    <meta name="twitter:image" content="https://rpodcast.github.io/hpc_corr_datamishaps/img/hpc_corr_cover.png"/>
-    <meta name="twitter:image:alt" content="The first slide of the Power-Hungry Correlations at their (HPC) Cores presentation in the Data Mishaps 2022 Conference held on February 24, 2022"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:creator" content="@theRcast"/>
-    <meta name="twitter:site" content="@theRcast"/>
-    <meta property="og:title" content="Power-Hungry Correlations at their (HPC) Cores"/>
-    <meta property="og:description" content="A story of how I took down an entire HPC cluster and lived to tell about it."/>
-    <meta property="og:url" content="https://rpodcast.github.io/hpc_corr_datamishaps"/>
-    <meta property="og:image" content="https://rpodcast.github.io/hpc_corr_datamishaps/img/hpc_corr_cover.png"/>
-    <meta property="og:image:alt" content="The first slide of the Power-Hungry Correlations at their (HPC) Cores presentation in the Data Mishaps 2022 Conference held on February 24, 2022"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta property="article:author" content="Eric Nantz"/>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="chat.css" type="text/css" />
   </head>
@@ -33,160 +14,47 @@
 
 
 
-
-
-
-class: left, middle, hide-count
-
-background-image: url(img/mcp_explode.png) 
-background-size: cover
-
-
-.talk-meta[
-.talk-title[
-# Power-Hungry Correlations at their (HPC) Cores
-]
-]
-
-.talk-author[
-Eric Nantz
-]
-
-.talk-date[
-February 24th, 2022
-]
-
-&lt;style type="text/css"&gt;
-.talk-meta {
-  position: absolute;
-  text-align: left;
-  bottom: 400px;
-  left: 25px;
-}
-
-.talk-author {
-  font-weight: bold;
-  font-size: 1.5em;
-  line-height: 1em;
-}
-
-.talk-date {
-  font-size: 1.25em;
-  line-height: 0;
-}
-&lt;/style&gt;
-
-
----
-
-# Rough Outline
-
-* Early in my career as a Statistician
-* Eager to make a positive impact
-
-
----
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
-background-position: 50% 50%
-class: center, bottom, inverse
-
-# You only live once!
-
----
-
-# Hello Ninja
-
-&lt;div class="tenor-gif-embed" data-postid="18131061" data-share-method="host" data-aspect-ratio="1" data-width="100%"&gt;&lt;a href="https://tenor.com/view/star-trek-star-trek-tos-sulu-explode-computer-gif-18131061"&gt;Star Trek Star Trek Tos GIF&lt;/a&gt;from &lt;a href="https://tenor.com/search/star+trek-gifs"&gt;Star Trek GIFs&lt;/a&gt;&lt;/div&gt; &lt;script type="text/javascript" async src="https://tenor.com/embed.js"&gt;&lt;/script&gt;
-
----
-
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
-
-1. The [remark.js](https://remarkjs.com) library;
-
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
-
----
-
-# remark.js
-
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
-
-- create a new slide (Markdown syntax&lt;sup&gt;*&lt;/sup&gt; and slide properties);
-
-- format a slide (e.g. text alignment);
-
-- configure the slideshow;
-
-- and use the presentation (keyboard shortcuts).
-
-It is important to be familiar with remark.js before you can understand the options in **xaringan**.
-
-.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
-
----
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
-background-size: cover
-class: center, bottom, inverse
-
-# I was so happy to have discovered remark.js!
-
----
 class: inverse
 
 &lt;ul class="nobull"&gt;
 &lt;li&gt;
 &lt;div class="container"&gt;
   &lt;img src="img/rpodcast-hexagon.png" alt="Avatar"&gt;
-  &lt;p style="--delay: 0.50s;"&gt;Hello. How are you today?&lt;/p&gt;
+  &lt;p&gt;Hello. How are you today?&lt;/p&gt;
   &lt;span class="time-right"&gt;11:00&lt;/span&gt;
 &lt;/div&gt;
 &lt;/li&gt;
+
+--
+
 &lt;li&gt;
 &lt;div class="container darker"&gt;
   &lt;img src="img/rpodcast-hexagon.png" alt="Avatar" class="right"&gt;
-  &lt;p style="--delay: 2.50s;"&gt;Hey! I'm fine. Thanks for asking!&lt;/p&gt;
+  &lt;p&gt;Hey! I'm fine. Thanks for asking!&lt;/p&gt;
   &lt;span class="time-left"&gt;11:01&lt;/span&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
+--
+
 &lt;li&gt;
 &lt;div class="container"&gt;
   &lt;img src="img/rpodcast-hexagon.png" alt="Avatar"&gt;
-  &lt;p style="--delay: 4.50s;"&gt;Sweet! So, what do you wanna do today?&lt;/p&gt;
+  &lt;p&gt;Sweet! So, what do you wanna do today?&lt;/p&gt;
   &lt;span class="time-right"&gt;11:02&lt;/span&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
+--
+
 &lt;li&gt;
 &lt;div class="container darker"&gt;
   &lt;img src="img/rpodcast-hexagon.png" alt="Avatar" class="right"&gt;
-  &lt;p style="--delay: 6.50s;"&gt;Nah, I dunno. Play soccer.. or learn more coding perhaps?&lt;/p&gt;
+  &lt;p&gt;Nah, I dunno. Play soccer.. or learn more coding perhaps?&lt;/p&gt;
   &lt;span class="time-left"&gt;11:05&lt;/span&gt;
 &lt;/div&gt; 
 &lt;/li&gt;
 &lt;/ul&gt;
-
----
-class: animated slideInRight fadeOutLeft
-
-# Silly
-
-Hi there
-
---
-
-- One
-
---
-
-- Two
-
---
-
-- Three
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
