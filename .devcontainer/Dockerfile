@@ -62,6 +62,17 @@ COPY library-scripts/.Rprofile-vscode /renv/.Rprofile-vscode
 #RUN apt-get -y install ./tmp/hugo.deb
 
 # [Optional] Uncomment this section to add addtional system dependencies needed for project
+RUN curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    apt-get update -qq && \
+    apt-get -y install ./google-chrome-stable_current_amd64.deb && \ 
+    rm google-chrome-stable_current_amd64.deb
+    
+# [Optional] Uncomment this section to add addtional system dependencies needed for project
+RUN apt-get update \
+    && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends libmagick++-dev libpng-dev imagemagick libpoppler-cpp-dev
+
+
 # RUN apt-get update \
 #     && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends ---packages list----

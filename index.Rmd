@@ -6,7 +6,7 @@ institute: "Statistician & Podcast Host"
 date: "2022-02-24"
 output:
   xaringan::moon_reader:
-    css: [xaringan-themer.css, chat.css]
+    css: [my-theme.css, xaringan-themer.css, chat.css]
     lib_dir: libs
     seal: false
     nature:
@@ -23,6 +23,10 @@ knitr::opts_chunk$set(
   fig.width = 10, fig.height = 6, fig.retina = 2, warning = FALSE, message = FALSE
 )
 library(magrittr)
+```
+
+```{r xaringan-animate-css, echo=FALSE}
+xaringanExtra::use_animate_css()
 ```
 
 ```{r metathis, echo=FALSE}
@@ -47,10 +51,10 @@ meta() %>%
 
 
 class: left, middle, hide-count
-
 background-image: url(img/mcp_explode.png) 
-background-size: cover
+background-size: 100%
 
+<div class="talk-logo event-logo"></div>
 
 .talk-meta[
 .talk-title[
@@ -60,6 +64,10 @@ background-size: cover
 
 .talk-author[
 Eric Nantz
+]
+
+.talk-event[
+Data Mishaps Night
 ]
 
 .talk-date[
@@ -76,6 +84,12 @@ February 24th, 2022
 
 .talk-author {
   font-weight: bold;
+  font-size: 2.0em;
+  line-height: 1em;
+}
+
+.talk-event {
+  font-weight: bold;
   font-size: 1.5em;
   line-height: 1em;
 }
@@ -84,24 +98,59 @@ February 24th, 2022
   font-size: 1.25em;
   line-height: 0;
 }
+
+.talk-logo {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  top: 66%;
+  left: 87%;
+}
+
+.event-logo {
+  background-image: url('img/datamishaps_hexsticker.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 ```
 
 
 ---
+background-image: url(img/network_background.png) 
+background-size: cover
 
-# Rough Outline
+## To the Grid 
 
-* Early in my career as a Statistician
-* Eager to make a positive impact
+.pull-left[
+
+Early days of my career in life sciences
+
+Ready to contribute!
+]
+
+.pull-right[
+<img src="img/kevin-flynn-tron.jpg" width = "100%">
+]
 
 
 ---
-background-image: url(`r xaringan:::karl`)
-background-position: 50% 50%
-class: center, bottom, inverse
+background-image: url(img/network_background.png) 
+background-size: cover
 
-# You only live once!
+# A New Challenge Awaits
 
+.pull-left[
+.big[
+* Thousands of genetic biomarkers
+* Explore possible associations with multiple clinical outcomes
+* My first chance to analyze BIG DATA
+
+]
+]
+
+.pull-right[
+<img src="img/molecule.png" width = "100%">
+]
 ---
 
 # Hello Ninja
@@ -144,60 +193,21 @@ class: center, bottom, inverse
 # I was so happy to have discovered remark.js!
 
 ---
-class: inverse
 
-<ul class="nobull">
-<li>
-<div class="container">
-  <img src="img/rpodcast-hexagon.png" alt="Avatar">
-  <p style="--delay: 0.50s;">Hello. How are you today?</p>
-  <span class="time-right">11:00</span>
-</div>
-</li>
-<li>
-<div class="container darker">
-  <img src="img/rpodcast-hexagon.png" alt="Avatar" class="right">
-  <p style="--delay: 2.50s;">Hey! I'm fine. Thanks for asking!</p>
-  <span class="time-left">11:01</span>
-</div>
-</li>
+```{r chat-print, echo=FALSE, results="asis"}
+chat_slides <- dir("img", pattern = "^chat_", full.names = TRUE)
 
-<li>
-<div class="container">
-  <img src="img/rpodcast-hexagon.png" alt="Avatar">
-  <p style="--delay: 4.50s;">Sweet! So, what do you wanna do today?</p>
-  <span class="time-right">11:02</span>
-</div>
-</li>
+chat_slides_txt <- glue::glue("
 
-<li>
-<div class="container darker">
-  <img src="img/rpodcast-hexagon.png" alt="Avatar" class="right">
-  <p style="--delay: 6.50s;">Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
-  <span class="time-left">11:05</span>
-</div> 
-</li>
-</ul>
-
+class: hide-count animated fadeIn
+background-image: url('{chat_slides}')
+background-size: contain
 ---
-class: animated slideInRight fadeOutLeft
+")
 
-# Silly
 
-Hi there
-
---
-
-- One
-
---
-
-- Two
-
---
-
-- Three
-
+cat(chat_slides_txt, sep = "")
+```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
@@ -205,6 +215,7 @@ style_mono_dark(
   base_color = "#cbf7ed",
   header_font_google = google_font("Orbitron", "700"),
   text_font_google = google_font("Azeret Mono", "400"),
+  base_font_size = "24px",
   extra_css = list(
     ".hide-count .remark-slide-number" = list(
         display = "none"
