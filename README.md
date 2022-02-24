@@ -1,7 +1,3 @@
-# R Projects Development Template
+# Power-Hungry Correlations at their (HPC) Cores
 
-This repo provides a starting template for a containerized development environment for my R projects in data science and Shiny application development, tailored to both the RStudio IDE as well as Visual Studio Code. For a more detailed description, please see the [`.devcontainer/README.md`](.devcontainer/README.md)),
-
-🎥 Check out this previous [Shiny Developer Series livestream](https://youtu.be/4wRiPG9LM3o) for a hands-on walkthrough of this setup!
-
-
+This repository contains the source files used in my presentation at the [2022 Data Mishaps](https://datamishapsnight.com) event held on February 24, 2022. The slides were built with the [`{xaringan}`](https://github.com/yihui/xaringan) R package.
