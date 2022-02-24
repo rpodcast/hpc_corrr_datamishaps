@@ -187,7 +187,7 @@ February 24th, 2022
 ]
 
 .talk-link[
-Slides available at bit.ly/hpcdata
+Slides available at [bit.ly/hpcmishap](https://bit.ly/hpcmishap)
 ]
 
 ```{css echo=FALSE}

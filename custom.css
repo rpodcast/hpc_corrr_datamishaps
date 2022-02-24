@@ -9770,3 +9770,203 @@
   bottom: 5%;
   left: 55%;
 }
+
+
+/* Extra CSS */
+.hide-count .remark-slide-number {
+  display: none;
+}
+.large {
+  font-size: 1.5em;
+}
+.big {
+  font-size: 2em;
+}
+.large2 {
+  font-size: 1.2em;
+}
+.medium {
+  font-size: 60%;
+}
+.third {
+  width: 33%;
+}
+.two-third {
+  width: 66%;
+}
+.right-column img {
+  max-height: 35vh;
+  margin-top: -2em;
+}
+.large .remark-code {
+  font-size: 200% !important;
+}
+.tiny .remark-code {
+  font-size: 80% !important;
+}
+.medium .remark-code {
+  font-size: 160% !important;
+}
+.remark-slide-number {
+  display: none;
+}
+.twitter-logo {
+  position: absolute;
+  bottom: 40%;
+  left: 8%;
+}
+.twitter-text {
+  position: absolute;
+  bottom: 35%;
+  left: 5%;
+}
+.github-logo {
+  position: absolute;
+  bottom: 40%;
+  left: 27%;
+}
+.github-text {
+  position: absolute;
+  bottom: 35%;
+  left: 25%;
+}
+.podcast-logo {
+  position: absolute;
+  bottom: 40%;
+  left: 52%;
+}
+.podcast-text {
+  position: absolute;
+  bottom: 35%;
+  left: 45%;
+}
+.sds-logo {
+  position: absolute;
+  bottom: 40%;
+  left: 80%;
+}
+.sds-text {
+  position: absolute;
+  bottom: 35%;
+  left: 70%;
+}
+.twitch-logo {
+  position: absolute;
+  bottom: 10%;
+  left: 27%;
+}
+.twitch-text {
+  position: absolute;
+  bottom: 5%;
+  left: 18%;
+}
+.rweekly-logo {
+  position: absolute;
+  bottom: 10%;
+  left: 58%;
+}
+.rweekly-text {
+  position: absolute;
+  bottom: 5%;
+  left: 55%;
+}
+
+
+/* Extra CSS */
+.hide-count .remark-slide-number {
+  display: none;
+}
+.large {
+  font-size: 1.5em;
+}
+.big {
+  font-size: 2em;
+}
+.large2 {
+  font-size: 1.2em;
+}
+.medium {
+  font-size: 60%;
+}
+.third {
+  width: 33%;
+}
+.two-third {
+  width: 66%;
+}
+.right-column img {
+  max-height: 35vh;
+  margin-top: -2em;
+}
+.large .remark-code {
+  font-size: 200% !important;
+}
+.tiny .remark-code {
+  font-size: 80% !important;
+}
+.medium .remark-code {
+  font-size: 160% !important;
+}
+.remark-slide-number {
+  display: none;
+}
+.twitter-logo {
+  position: absolute;
+  bottom: 40%;
+  left: 8%;
+}
+.twitter-text {
+  position: absolute;
+  bottom: 35%;
+  left: 5%;
+}
+.github-logo {
+  position: absolute;
+  bottom: 40%;
+  left: 27%;
+}
+.github-text {
+  position: absolute;
+  bottom: 35%;
+  left: 25%;
+}
+.podcast-logo {
+  position: absolute;
+  bottom: 40%;
+  left: 52%;
+}
+.podcast-text {
+  position: absolute;
+  bottom: 35%;
+  left: 45%;
+}
+.sds-logo {
+  position: absolute;
+  bottom: 40%;
+  left: 80%;
+}
+.sds-text {
+  position: absolute;
+  bottom: 35%;
+  left: 70%;
+}
+.twitch-logo {
+  position: absolute;
+  bottom: 10%;
+  left: 27%;
+}
+.twitch-text {
+  position: absolute;
+  bottom: 5%;
+  left: 18%;
+}
+.rweekly-logo {
+  position: absolute;
+  bottom: 10%;
+  left: 58%;
+}
+.rweekly-text {
+  position: absolute;
+  bottom: 5%;
+  left: 55%;
+}
