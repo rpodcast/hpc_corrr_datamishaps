@@ -70,7 +70,7 @@ RUN curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd
 # [Optional] Uncomment this section to add addtional system dependencies needed for project
 RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends libmagick++-dev libpng-dev imagemagick libpoppler-cpp-dev
+    && apt-get -y install --no-install-recommends libmagick++-dev libpng-dev imagemagick libpoppler-cpp-dev libgit2-dev
 
 
 # RUN apt-get update \
