@@ -1,7 +1,0 @@
----
-output: html_document_base
----
-
-```{r, echo=FALSE}
-countdown::countdown(5, style = "z-index:100")
-```

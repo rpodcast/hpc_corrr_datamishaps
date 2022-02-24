@@ -6,7 +6,7 @@ institute: "Statistician & Podcast Host"
 date: "2022-02-24"
 output:
   xaringan::moon_reader:
-    css: [my-theme.css, xaringan-themer.css, chat.css]
+    css: [custom.css, xaringan-themer.css, chat.css]
     lib_dir: libs
     seal: false
     nature:
@@ -23,10 +23,122 @@ knitr::opts_chunk$set(
   fig.width = 10, fig.height = 6, fig.retina = 2, warning = FALSE, message = FALSE
 )
 library(magrittr)
+library(xaringanthemer)
+library(fontawesome)
+style_mono_dark(
+  base_color = "#cbf7ed",
+  header_font_google = google_font("Orbitron", "700"),
+  text_font_google = google_font("Azeret Mono", "400"),
+  base_font_size = "24px",
+  code_font_size = "1.8rem"
+)
+extra_css <- list(
+  ".hide-count .remark-slide-number" = list(
+      display = "none"
+  ),
+  ".large" = list(
+    "font-size" = "1.5em"
+  ),
+  ".big" = list(
+    "font-size" = "2em"
+  ),
+  ".large2" = list(
+    "font-size" = "1.2em"
+  ),
+  ".medium" = list(
+    "font-size" = "60%"
+  ),
+  ".third" = list(
+    width = "33%"
+  ),
+  ".two-third" = list(
+    width = "66%"
+  ),
+  ".right-column img" = list(
+    "max-height" = "35vh",
+    "margin-top" = "-2em"
+  ),
+  ".large .remark-code" = list( 
+    "font-size" = "200% !important"
+  ),
+  ".tiny .remark-code" = list(
+    "font-size" =  "80% !important"
+  ),
+  ".medium .remark-code" = list(
+    "font-size" =  "160% !important"
+  ),
+  ".remark-slide-number" = list(
+    "display" = "none"
+  ),
+  ".twitter-logo" = list(
+    "position" = "absolute",
+    "bottom" = "40%",
+    "left" = "8%"
+  ),
+  ".twitter-text" = list(
+    "position" = "absolute",
+    "bottom" = "35%",
+    "left" = "5%"
+  ),
+  ".github-logo" = list(
+    "position" = "absolute",
+    "bottom" = "40%",
+    "left" = "27%"
+  ),
+  ".github-text" = list(
+    "position" = "absolute",
+    "bottom" = "35%",
+    "left" = "25%"
+  ),
+  ".podcast-logo" = list(
+    "position" = "absolute",
+    "bottom" = "40%",
+    "left" = "52%"
+  ),
+  ".podcast-text" = list(
+    "position" = "absolute",
+    "bottom" = "35%",
+    "left" = "45%"
+  ),
+  ".sds-logo" = list(
+    "position" = "absolute",
+    "bottom" = "40%",
+    "left" = "80%"
+  ),
+  ".sds-text" = list(
+    "position" = "absolute",
+    "bottom" = "35%",
+    "left" = "70%"
+  ),
+  ".twitch-logo" = list(
+    "position" = "absolute",
+    "bottom" = "10%",
+    "left" = "27%"
+  ),
+  ".twitch-text" = list(
+    "position" = "absolute",
+    "bottom" = "5%",
+    "left" = "18%"
+  ),
+  ".rweekly-logo" = list(
+    "position" = "absolute",
+    "bottom" = "10%",
+    "left" = "58%"
+  ),
+  ".rweekly-text" = list(
+    "position" = "absolute",
+    "bottom" = "5%",
+    "left" = "55%"
+  )
+)
+
+style_extra_css(css = extra_css, outfile = "custom.css")
+
 ```
 
-```{r xaringan-animate-css, echo=FALSE}
-xaringanExtra::use_animate_css()
+```{r xaringanExtra, echo=FALSE}
+#xaringanExtra::use_animate_css()
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 ```
 
 ```{r metathis, echo=FALSE}
@@ -51,7 +163,7 @@ meta() %>%
 
 
 class: left, middle, hide-count
-background-image: url(img/mcp_explode.png) 
+background-image: url(img/tron_legacy_wallpaper_dim.png) 
 background-size: 100%
 
 <div class="talk-logo event-logo"></div>
@@ -72,6 +184,10 @@ Data Mishaps Night
 
 .talk-date[
 February 24th, 2022
+]
+
+.talk-link[
+Slides available at bit.ly/hpcdata
 ]
 
 ```{css echo=FALSE}
@@ -99,12 +215,19 @@ February 24th, 2022
   line-height: 0;
 }
 
-.talk-logo {
-  width: 160px;
-  height: 160px;
+.talk-link {
+  font-size: 1.25em;
   position: absolute;
-  top: 66%;
-  left: 87%;
+  bottom: 5%;
+  left: 4%;
+}
+
+.talk-logo {
+  width: 320px;
+  height: 320px;
+  position: absolute;
+  top: 50%;
+  left: 70%;
 }
 
 .event-logo {
@@ -112,114 +235,273 @@ February 24th, 2022
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.koopa-img {
+  background-image: url('img/koopa.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.koopa-logo {
+  width: 150px;
+  height: 200px;
+  position: absolute;
+  top: 38%;
+  left: 65%;
+}
 ```
 
 
 ---
-background-image: url(img/network_background.png) 
+background-image: url(img/network_background_mod.png) 
 background-size: cover
 
-## To the Grid 
+## The Journey Begins
 
 .pull-left[
-
+.big[
 Early days of my career in life sciences
 
 Ready to contribute!
 ]
 
+]
+
 .pull-right[
-<img src="img/kevin-flynn-tron.jpg" width = "100%">
+<img src="img/kevin-flynn-tron.jpg" alt="Kevin Flynn ready for the grid" width = "100%">
 ]
 
 
 ---
-background-image: url(img/network_background.png) 
+background-image: url(img/network_background_mod.png) 
 background-size: cover
 
 # A New Challenge Awaits
 
-.pull-left[
+
 .big[
 * Thousands of genetic biomarkers
 * Explore possible associations with multiple clinical outcomes
-* My first chance to analyze BIG DATA
+* Analyze BIG DATA with `r fa("r-project")`!
+]
 
+---
+class: inverse, middle
+background-image: url(img/network_background_mod.png) 
+background-size: cover
+exclude: true
+
+.f6.code[
+```r
+for (x in biomarker_var) {
+  for (y in response_var) {
+    cor(x, y)
+  }
+}
+```
+]
+
+---
+class: inverse, middle
+background-image: url(img/network_background_mod.png) 
+background-size: cover
+exclude: true
+
+.f6.code[
+```r
+for (x in biomarker_var) {
+  for (y in response_var) {
+    # permuted data sets
+    lapply(
+      1:1000, 
+      custom_cor, 
+      x = x, 
+      y = y)
+  }
+}
+```
+]
+
+---
+class: inverse, middle
+background-image: url(img/network_background_mod.png) 
+background-size: cover
+
+<div class="koopa-logo koopa-img"></div>
+
+.f6.code[
+```r
+for (x in biomarker_var) {
+  for (y in response_var) {
+    # permuted data sets
+    mclapply(
+      1:1000, 
+      custom_cor, 
+      x = x, 
+      y = y,
+      mc.cores = detectCores())
+  }
+}
+```
+]
+
+---
+class: middle
+background-image: url(img/hpc-cluster.jpg) 
+background-size: cover
+
+### Batches to the Grid
+
+```bash
+#!/bin/bash
+Rscript script.R --batch1
+Rscript script.R --batch2
+Rscript script.R --batch3
+Rscript script.R --batch4
+Rscript script.R --batch5
+Rscript script.R --batch6
+...
+Rscript script.R --batch1000
+```
+
+---
+class: inverse hide-count animated fadeIn
+
+--
+
+<ul class="nobull">
+<li>
+<div class="container">
+  <img src="img/ed_dillinger.png" alt="Ed, the lead from research IT">
+  <p>Hello Eric, this is Ed from the research IT team. Did you submit a job array with ID 8675309?</p>
+</div>
+</li>
+
+--
+
+<li>
+<div class="container darker">
+  <img src="img/eric_happy.png" alt="Eric, the happy statistician" class="right">
+  <p>Hello Ed, nice to meet you! Yes, I submitted that job earlier today. I guess it is taking longer than I anticipated to complete.</p>
+</div>
+</li>
+
+--
+
+<li>
+<div class="container">
+  <img src="img/ed_dillinger.png" alt="Ed, the lead from research IT">
+  <p>Your HPC jobs have brought the entire HPC cluster down.</p>
+</div>
+</li>
+
+--
+
+<li>
+<div class="container darker">
+  <img src="img/eric_shock.png" alt="Eric, the statistician in complete shock" class="right">
+  <p>Oh no!</p>
+</div>
+</li>
+</ul>
+
+---
+background-image: url(img/network_background_mod.png)
+background-size: cover
+
+## Small Glitch ...
+
+.pull-left[
+.large[
+* Compute servers running my jobs had memory and CPU usage **maxed out**
+* All other jobs were stopped, even the really important ones
+* Emergency server reboot was required
 ]
 ]
 
 .pull-right[
-<img src="img/molecule.png" width = "100%">
+<img src="img/star-trek-explode.gif" alt="Star Trek gif of destroying the ship computer" width = "80%">
 ]
----
-
-# Hello Ninja
-
-<div class="tenor-gif-embed" data-postid="18131061" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/star-trek-star-trek-tos-sulu-explode-computer-gif-18131061">Star Trek Star Trek Tos GIF</a>from <a href="https://tenor.com/search/star+trek-gifs">Star Trek GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 ---
-
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
-
-1. The [remark.js](https://remarkjs.com) library;
-
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
-
----
-
-# remark.js
-
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
-
-- create a new slide (Markdown syntax<sup>*</sup> and slide properties);
-
-- format a slide (e.g. text alignment);
-
-- configure the slideshow;
-
-- and use the presentation (keyboard shortcuts).
-
-It is important to be familiar with remark.js before you can understand the options in **xaringan**.
-
-.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
-
----
-background-image: url(`r xaringan:::karl`)
+background-image: url(img/network_background_mod.png) 
 background-size: cover
-class: center, bottom, inverse
 
-# I was so happy to have discovered remark.js!
+## New Chapter Begins
+
+.pull-left[
+.large2[
+* After correcting the mistake, eager to learn better approaches to HPC computing
+* Launched my most valuable relationships in the company
+* Kickstarted amazing innovations in our statistical computing infrastructure
+]
+]
+
+.pull-right[
+<img src="img/tron_group.png" alt="The Tron programs unite" width = "100%">
+]
 
 ---
+background-image: url(img/network_background_mod.png) 
+background-size: cover
 
-```{r chat-print, echo=FALSE, results="asis"}
-chat_slides <- dir("img", pattern = "^chat_", full.names = TRUE)
+# Thank you!
 
-chat_slides_txt <- glue::glue("
+.twitter-logo[
+## `r fa("twitter", fill = "steelblue", height = "2em")`
+]
+.twitter-text[
+.large2[
+[@theRcast](https://twitter.com/thercast)
+]
+]
 
-class: hide-count animated fadeIn
-background-image: url('{chat_slides}')
-background-size: contain
----
-")
+.github-logo[
+## `r fa("github", fill = "steelblue", height = "2em")`
+]
 
+.github-text[
+.large2[
+[@rpodcast](https://github.com/rpodcast)
+]
+]
 
-cat(chat_slides_txt, sep = "")
-```
+.podcast-logo[
+## `r fa("microphone", fill = "steelblue", height = "2em")`
+]
 
-```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
-style_mono_dark(
-  base_color = "#cbf7ed",
-  header_font_google = google_font("Orbitron", "700"),
-  text_font_google = google_font("Azeret Mono", "400"),
-  base_font_size = "24px",
-  extra_css = list(
-    ".hide-count .remark-slide-number" = list(
-        display = "none"
-    )
-  )
-)
-```
+.podcast-text[
+.large2[
+[r-podcast.org](https://r-podcast.org)
+]
+]
+
+.sds-logo[
+## `r fa("youtube", fill = "steelblue", height = "2em")`
+]
+
+.sds-text[
+.large2[
+[shinydevseries.com](https://shinydevseries.com)
+]
+]
+
+.twitch-logo[
+## `r fa("twitch", fill = "steelblue", height = "2em")`
+]
+
+.twitch-text[
+.large2[
+[twitch.tv/rpodcast](https://twitch.tv/rpodcast)
+]
+]
+
+.rweekly-logo[
+## `r fa("newspaper", fill = "steelblue", height = "2em")`
+]
+
+.rweekly-text[
+.large2[
+[rweekly.org](https://rweekly.org)
+]
+]

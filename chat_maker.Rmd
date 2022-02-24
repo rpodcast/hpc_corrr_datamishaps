@@ -18,6 +18,8 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+# Source for creasting graphics of the chat boxes for use in the main slides
+# - EDIT: Not necessary anymore!
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(
   fig.width = 10, fig.height = 6, fig.retina = 2, warning = FALSE, message = FALSE
@@ -30,7 +32,7 @@ class: inverse
 <ul class="nobull">
 <li>
 <div class="container">
-  <img src="img/ed_dillinger.png" alt="Avatar">
+  <img src="img/ed_dillinger.png" alt="Ed the Research IT Lead">
   <p>Hello Eric, this is Ed from the research IT team. Did you submit a job with ID 8675309?</p>
   <span class="time-right">11:00</span>
 </div>
@@ -40,7 +42,7 @@ class: inverse
 
 <li>
 <div class="container darker">
-  <img src="img/eric_happy.png" alt="Avatar" class="right">
+  <img src="img/eric_happy.png" alt="Eric the happy statistician" class="right">
   <p>Hello Ed, nice to meet you! Yes, I submitted that job earlier today. I guess it is taking longer than I expected to complete.</p>
   <span class="time-left">11:01</span>
 </div>
@@ -50,7 +52,7 @@ class: inverse
 
 <li>
 <div class="container">
-  <img src="img/ed_dillinger.png" alt="Avatar">
+  <img src="img/ed_dillinger.png" alt="Ed the Research IT Lead">
   <p>Your HPC jobs have brought the entire HPC cluster down.</p>
   <span class="time-right">11:02</span>
 </div>
@@ -60,7 +62,7 @@ class: inverse
 
 <li>
 <div class="container darker">
-  <img src="img/eric_shock.png" alt="Avatar" class="right">
+  <img src="img/eric_shock.png" alt="Eric the statistician in complete shock" class="right">
   <p>Oh no!</p>
   <span class="time-left">11:01</span>
 </div>
